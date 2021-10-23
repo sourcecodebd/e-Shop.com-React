@@ -44,8 +44,8 @@ const Shipping = () => {
         <div>
             <h2 className="shipping-title">Shipping Information</h2>
             <p className="lines"></p>
-            <div className="col-md-8 shadow container mb-4 my-3 d-flex justify-content-center align-items-center p-3" style={backgroundStyle}>
-                <div className="bg-blur rounded-3 text-dark p-3 col-md-4 mx-auto">
+            <div className="col-md-8 shadow container mb-4 my-3 d-lg-flex justify-content-center align-items-center p-3 gap-5" style={backgroundStyle}>
+                <div className="bg-blur rounded-3 text-dark p-3 col-md-4 mx-auto mb-2">
                     <h5>Submit Address</h5>
                     <form onSubmit={handleAddress} className="d-flex flex-column gap-3">
                         <input type="text" ref={houseRef} className="form-control bg-transparent border border-white border-3" placeholder="House No." />
