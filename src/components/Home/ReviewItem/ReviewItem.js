@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
-import { useHistory } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
+import swal from 'sweetalert2';
 
 const ReviewItem = ({ item }) => {
     const { id, title, filename, quantity, price } = item || {};
@@ -13,12 +13,7 @@ const ReviewItem = ({ item }) => {
     const handleRemoveItem = () => {
         const deleted = cart.filter(c => c.id !== item.id);
         setCart(deleted);
-    }
-
-    const history = useHistory();
-    const handlePlaceOrder = () => {
-        setCart([]);
-        history.push('/shipping');
+        new swal("", "Item removed!", "warning");
     }
 
     return (
@@ -29,8 +24,7 @@ const ReviewItem = ({ item }) => {
             <p>Quantity: {quantity}</p>
             <p>Total Price: ${totalPrice.toFixed(2)}</p>
             <div>
-                <Button onClick={handleRemoveItem} variant="contained" className="bg-danger"><i className="fas fa-trash me-1"></i> Remove</Button>
-                <Button onClick={handlePlaceOrder} variant="contained" className="bg-success mt-3"><i class="fas fa-location-arrow me-1"></i> Place Order</Button>
+                <Button onClick={handleRemoveItem} variant="contained" className="bg-warning text-dark"><i className="fas fa-trash me-1"></i> Remove</Button>
             </div>
         </div>
     );

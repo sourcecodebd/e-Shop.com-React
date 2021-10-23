@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SearchResult = ({ result }) => {
-    const { title } = result || {};
+    const { id, title } = result || {};
 
     return (
         <div className="bg-white col-md-3 mx-auto">
-            <Link to='/'><p>{title}</p></Link>
+            <Link to={`/read-more/${id}`}><p>{title}</p></Link>
         </div>
     );
 };

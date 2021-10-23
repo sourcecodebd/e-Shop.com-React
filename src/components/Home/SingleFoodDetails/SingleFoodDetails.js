@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { ButtonGroup, Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import swal from 'sweetalert2';
 import './SingleFoodDetails.css';
 
 const SingleFoodDetails = () => {
@@ -17,7 +18,10 @@ const SingleFoodDetails = () => {
     useEffect(() => {
         const found = products.find(product => product.id === parseFloat(foodId));
         setFoodDetails(found);
-    }, [products, foodId, foodDetails]);
+        if (count === 0) {
+            setCount(1);
+        }
+    }, [products, foodId, foodDetails, count, setCount]);
 
     let newPrice = 0;
     for (const item of cart) {
@@ -36,9 +40,7 @@ const SingleFoodDetails = () => {
         }
     }
 
-    if (count === 0) {
-        setCount(1);
-    }
+
     const foundProduct = cart.find(c => c.id === parseFloat(foodId));
     const addToCart = (foodDetails) => {
         const newArray = [...cart];
@@ -51,6 +53,7 @@ const SingleFoodDetails = () => {
             newArray.push(foodDetails);
         }
         setCart(newArray);
+        new swal("", "Your Order has been placed successfully!!", "success");
     }
 
 
