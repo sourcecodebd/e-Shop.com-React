@@ -9,8 +9,7 @@ const AvailableFood = ({ available }) => {
     const { id, title, description, filename, type, price, rating } = available;
 
     const { carts } = useAuth(); // using contextAPI
-    const { cart, setCount } = carts;
-    console.log(cart)
+    const { setCount } = carts;
 
     // const { cart, count, setCart, setCount } = useCart(); //using custom-hook
     const history = useHistory();

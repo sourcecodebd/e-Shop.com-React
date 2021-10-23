@@ -25,7 +25,7 @@ const ReadMoreDetails = ({ mealDetails }) => {
                         :
                         <p className="text-danger">{msg}</p>
                 }
-                <small className="fw-bold">Tags: <span class="badge rounded-pill bg-warning text-dark">{strTags}</span></small>
+                <small className="fw-bold">Tags: <span className="badge rounded-pill bg-warning text-dark">{strTags ? strTags : "Not Found"}</span></small>
             </div>
         </div>
     );

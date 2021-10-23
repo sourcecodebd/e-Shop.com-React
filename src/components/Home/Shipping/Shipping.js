@@ -12,7 +12,7 @@ const Shipping = () => {
 
     const { carts, firebase } = useAuth();
     const { cart, shipping, setShipping } = carts;
-    console.log(cart);
+
     let totalQuantity = 0;
     let totalPrice = 0;
     for (let item of cart) {
@@ -95,7 +95,7 @@ const Shipping = () => {
                             :
                             "No Product Added to Cart yet!"
                     }
-                    <p><i class="fas fa-phone"></i> <span className="fw-bold">Keep in touch, Our Rider will contact with you soon!</span></p>
+                    <p><i className="fas fa-phone"></i> <span className="fw-bold">Keep in touch, Our Rider will contact with you soon!</span></p>
                 </div>
             </div>
         </div>

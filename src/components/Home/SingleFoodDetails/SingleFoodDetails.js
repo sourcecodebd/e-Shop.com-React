@@ -62,11 +62,11 @@ const SingleFoodDetails = () => {
             <h2 className="single-title">{foodDetails?.title}</h2>
             <p className="lines"></p>
             <div className="single-food-container">
-                <div className="single-food-details shadow p-5">
+                <div className="single-food-details shadow py-4 px-5 my-3 col-md-6 rounded-3">
                     <h3>Food Id: {foodId}</h3>
                     <h2 className="text-warning">Price: {!newPrice ? '$' + foodDetails?.price : '$' + newPrice.toFixed(2)}</h2>
                     <ButtonGroup className="me-2" aria-label="First group">
-                        <Button onClick={removeItem} variant="danger">-</Button><div className="single-input d-flex justify-content-center align-items-center fw-bold">{count}</div><Button onClick={addItem} variant="primary">+</Button>
+                        <Button onClick={removeItem} variant="danger"><i className="fas fa-minus"></i></Button><div className="single-input d-flex justify-content-center align-items-center fw-bold">{count}</div><Button onClick={addItem} variant="primary"><i className="fas fa-plus"></i></Button>
                     </ButtonGroup>
                     <ButtonMui onClick={() => addToCart(foodDetails)} variant="contained"><i className="fas fa-plus-square me-2"></i> Add To Cart</ButtonMui>
                 </div>

@@ -9,7 +9,6 @@ const Navigation = () => {
     const { carts, firebase } = useAuth(); // using contextAPI
     const { user, logOut } = firebase;
     const { cart } = carts;
-    console.log(cart)
 
     // const { cart, count, setCart, setCount } = useCart(); //using custom-hook
 
