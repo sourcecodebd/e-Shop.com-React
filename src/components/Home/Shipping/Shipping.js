@@ -34,9 +34,14 @@ const Shipping = () => {
         const road = roadRef.current.value;
         const city = cityRef.current.value;
         const address = { house, road, city }
-        setShipping(address);
-        e.target.reset();
-        new swal("Hurray!", "Your Shipping is on the way", "success");
+        if (cart.length) {
+            setShipping(address);
+            e.target.reset();
+            new swal("Hurray!", "Your Shipping is on the way", "success");
+        }
+        else {
+            new swal("", "Place Your Order first!", "error");
+        }
         e.preventDefault();
     }
 
@@ -44,13 +49,13 @@ const Shipping = () => {
         <div>
             <h2 className="shipping-title">Shipping Information</h2>
             <p className="lines"></p>
-            <div className="col-md-8 shadow container mb-4 my-3 d-lg-flex justify-content-center align-items-center p-3 gap-5" style={backgroundStyle}>
-                <div className="bg-blur rounded-3 text-dark p-3 col-md-4 mx-auto mb-2">
-                    <h5>Submit Address</h5>
+            <div className="col-md-8 shadow container mb-4 my-3 d-lg-flex justify-content-center p-3 gap-5" style={backgroundStyle}>
+                <div className="bg-blur rounded-3 text-dark p-3 col-md-4 mx-auto mb-2 h-100">
+                    <h4 className="fw-bold">Submit Address</h4>
                     <form onSubmit={handleAddress} className="d-flex flex-column gap-3">
-                        <input type="text" ref={houseRef} className="form-control bg-transparent border border-white border-3" placeholder="House No." />
-                        <input type="text" ref={roadRef} className="form-control bg-transparent border border-white border-3" placeholder="Road" />
-                        <input type="text" ref={cityRef} className="form-control bg-transparent border border-white border-3" placeholder="City" />
+                        <input type="text" ref={houseRef} className="form-control bg-transparent border border-white border-3" placeholder="House No." required />
+                        <input type="text" ref={roadRef} className="form-control bg-transparent border border-white border-3" placeholder="Road" required />
+                        <input type="text" ref={cityRef} className="form-control bg-transparent border border-white border-3" placeholder="City" required />
                         <Button type="submit" variant="contained">Continue</Button>
                     </form>
                 </div>
@@ -62,36 +67,35 @@ const Shipping = () => {
                             :
                             <i className="fas fa-user-circle fa-5x"></i>
                     }
-                    <h4>{user?.displayName}</h4>
+                    <h4 className="fw-bold">{user?.displayName}</h4>
                     {
                         shipping.house ?
                             <div>
-                                <h5>Address:</h5>
-                                <p>House: {shipping.house}</p>
-                                <p>Road: {shipping.road}</p>
-                                <p>City: {shipping.city}</p>
+                                <span className="fw-bold">Address: </span><span>{shipping.house}, {shipping.road}, {shipping.city}</span>
                             </div>
                             :
                             <div>
-                                Make sure you have provide us your shipping address to confirm your order
+                                Make sure you have provided us your shipping address to confirm your order
                             </div>
                     }
-                    <p><i className="fas fa-envelope"></i> Registered Email: {user?.email}</p>
-                    <p><i className="fas fa-receipt"></i> Total Ordered Product: {cart.length}</p>
-                    <p><i className="fas fa-pizza-slice"></i> Product Quantity: {totalQuantity}</p>
-                    <p><i className="fas fa-tags"></i> Your Bill: {totalPrice} taka only</p>
-                    <p><i className="fas fa-shopping-bag"></i> Added Product In your Cart:</p>
-                    <div className="row bg-blur border-custom">
-                        <p className="col-md-6 col-6">Product</p>
-                        <p className="col-md-6 col-6">Price (BDT.)</p>
+                    <p><i className="fas fa-envelope"></i> <span className="fw-bold">Registered Email:</span> {user?.email}</p>
+                    <p><i className="fas fa-receipt"></i> <span className="fw-bold">Total Ordered Product:</span> {cart.length}</p>
+                    <p><i className="fas fa-pizza-slice"></i> <span className="fw-bold">Product Quantity:</span> {totalQuantity}</p>
+                    <p><i className="fas fa-tags"></i> <span className="fw-bold">Your Bill:</span> {totalPrice} taka only</p>
+                    <p><i className="fas fa-shopping-bag"></i><span className="fw-bold"> Added Product In your Cart:</span></p>
+                    <div className="row bg-blur border-custom mx-0">
+                        <p className="col-md-6 col-6"> <span className="fw-bold">Product</span></p>
+                        <p className="col-md-6 col-6"> <span className="fw-bold">Price (BDT.)</span></p>
                     </div>
                     {
                         cart.length ?
-                            cart?.map(c => <AddedProduct added={c} key={c.id} />)
+                            <div className="overflow-custom">
+                                {cart?.map(c => <AddedProduct added={c} key={c.id} />)}
+                            </div>
                             :
                             "No Product Added to Cart yet!"
                     }
-                    <p><i class="fas fa-phone"></i> Keep in touch, Our Rider will contact with you soon!</p>
+                    <p><i class="fas fa-phone"></i> <span className="fw-bold">Keep in touch, Our Rider will contact with you soon!</span></p>
                 </div>
             </div>
         </div>
