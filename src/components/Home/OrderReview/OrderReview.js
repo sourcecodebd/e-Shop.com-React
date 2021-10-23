@@ -11,6 +11,10 @@ const OrderReview = () => {
     const { cart, setCart } = carts;
 
     const history = useHistory();
+    const handleFoodOrder = () => {
+        history.push('/food');
+    }
+
     const handleCancelOrder = () => {
         const proceed = window.confirm('Are you sure you want to cancel your order?');
         if (proceed) {
@@ -27,9 +31,9 @@ const OrderReview = () => {
                 <p className="lines mb-2"></p>
                 {
                     cart.length ?
-                        <Button onClick={handleCancelOrder} variant="contained" className="bg-danger mt-3"><i className="fas fa-location-arrow me-1"></i> Cancel Order</Button>
+                        <Button onClick={handleCancelOrder} variant="contained" className="bg-danger mt-3"><i className="fas fa-ban me-2"></i> Cancel Order</Button>
                         :
-                        ""
+                        <Button onClick={handleFoodOrder} variant="contained" className="bg-info mt-3"><i className="fas fa-location-arrow me-2"></i> Order Food</Button>
                 }
                 <div className="container shadow">
                     {

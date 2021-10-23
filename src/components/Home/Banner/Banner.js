@@ -28,79 +28,88 @@ const Banner = () => {
     const desc5 = products[5]?.description;
 
     return (
-        <Carousel fade className="carousel-custom" id="banner">
-            <Carousel.Item>
-                <img
-                    className="w-100"
-                    src={img0}
-                    alt="First slide"
-                />
-                <Carousel.Caption>
-                    <h3>{title0}</h3>
-                    <p>{desc0}</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="w-100"
-                    src={img1}
-                    alt="Second slide"
-                />
+        <div>
+            {
+                products.length === 0 ?
+                    <div className="my-5 bg-white">
+                        <img src="https://cdn.dribbble.com/users/645440/screenshots/3266490/loader-2_food.gif" alt="" />
+                    </div>
+                    :
+                    <Carousel fade className="carousel-custom" id="banner">
+                        <Carousel.Item>
+                            <img
+                                className="w-100"
+                                src={img0}
+                                alt="First slide"
+                            />
+                            <Carousel.Caption>
+                                <h3>{title0}</h3>
+                                <p>{desc0}</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="w-100"
+                                src={img1}
+                                alt="Second slide"
+                            />
 
-                <Carousel.Caption>
-                    <h3>{title1}</h3>
-                    <p>{desc1}</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="w-100"
-                    src={img2}
-                    alt="Third slide"
-                />
+                            <Carousel.Caption>
+                                <h3>{title1}</h3>
+                                <p>{desc1}</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="w-100"
+                                src={img2}
+                                alt="Third slide"
+                            />
 
-                <Carousel.Caption>
-                    <h3>{title2}</h3>
-                    <p>{desc2}</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="w-100"
-                    src={img3}
-                    alt="Third slide"
-                />
+                            <Carousel.Caption>
+                                <h3>{title2}</h3>
+                                <p>{desc2}</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="w-100"
+                                src={img3}
+                                alt="Third slide"
+                            />
 
-                <Carousel.Caption>
-                    <h3>{title3}</h3>
-                    <p>{desc3}</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="w-100"
-                    src={img4}
-                    alt="Third slide"
-                />
+                            <Carousel.Caption>
+                                <h3>{title3}</h3>
+                                <p>{desc3}</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="w-100"
+                                src={img4}
+                                alt="Third slide"
+                            />
 
-                <Carousel.Caption>
-                    <h3>{title4}</h3>
-                    <p>{desc4}</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="w-100"
-                    src={img5}
-                    alt="Third slide"
-                />
+                            <Carousel.Caption>
+                                <h3>{title4}</h3>
+                                <p>{desc4}</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="w-100"
+                                src={img5}
+                                alt="Third slide"
+                            />
 
-                <Carousel.Caption>
-                    <h3>{title5}</h3>
-                    <p>{desc5}</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
+                            <Carousel.Caption>
+                                <h3>{title5}</h3>
+                                <p>{desc5}</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    </Carousel>
+            }
+        </div>
     );
 };
 
