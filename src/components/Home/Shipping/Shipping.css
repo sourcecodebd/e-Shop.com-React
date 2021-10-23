@@ -1,0 +1,10 @@
+.shipping-title{
+    color: #ffb610;
+}
+.lines{
+    background-color: #ffb610;
+    height: 3px;
+    width: 80px;
+    margin: auto;
+    border-radius: 20px;
+}

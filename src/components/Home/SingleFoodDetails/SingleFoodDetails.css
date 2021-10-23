@@ -1,0 +1,45 @@
+.single-title{
+    color: #ffb610;
+}
+.lines{
+    background-color: #ffb610;
+    height: 3px;
+    width: 80px;
+    margin: auto;
+    border-radius: 20px;
+}
+.single-food-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    justify-content: space-around;
+    align-items: center;
+}
+.single-food-details{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+}
+.single-food-image{
+    height: 500px;
+    width: 500px
+}
+.single-food-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.single-input{
+    width: 50px;
+}
+@media only screen and (max-width:768px){
+    .single-food-container{
+        grid-template-columns: 1fr;
+        place-items: center;
+        gap: 2em
+    }
+    .single-food-image, .single-food-image img{
+        width: 200px;
+        height: 200px
+    }
+}

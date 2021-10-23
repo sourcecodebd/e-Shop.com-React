@@ -1,0 +1,61 @@
+.navbar-main{
+    margin-bottom: 50px;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1;
+    margin-top: -20px;
+    padding: 18px 0
+}
+.navbar-custom{
+    color: #ffb610;
+    cursor: pointer;
+    caret-color: transparent;
+}
+.navbar-custom:hover, .navbar-custom a:hover{
+    color: yellow;
+}
+.dropdown{
+    cursor: pointer;
+}
+.dropdown-content{
+    display: none;
+    box-shadow: rgba(0,0,0,0.1) 2px 4px 8px;
+    font-size: 18px;
+    z-index: 2
+}
+.dropdown:hover .dropdown-content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transition: 0.3s;
+}
+.dropdown-content a{
+    background-color: white !important;
+    color: black !important;
+    margin: 0;
+    padding: 5px
+}
+.dropdown-content a:hover{
+    background-color: #ffb610 !important;
+    color: black;
+}
+.down-arrow{
+    display: none;
+}
+.down-arrow:hover{
+    color: white;
+}
+.nav-section{
+    color: orange !important;
+}
+.nav-section:hover{
+    color: #00E9FF;
+}
+.nav-link:focus{
+    background-color: orange !important;
+    color: white !important;
+}
+.badge-custom{
+    position: relative;
+    bottom: 20px;
+}

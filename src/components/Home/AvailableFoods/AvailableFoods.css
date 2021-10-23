@@ -1,0 +1,13 @@
+.available-foods{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    grid-gap: 2em;
+    row-gap: 100px;
+}
+
+@media only screen and (max-width: 492px){
+    .available-foods{
+        grid-template-columns: 1fr; 
+    }
+}

@@ -1,0 +1,39 @@
+import { Button } from '@mui/material';
+import React from 'react';
+import { useHistory } from 'react-router';
+import useAuth from '../../../hooks/useAuth';
+
+const ReviewItem = ({ item }) => {
+    const { id, title, filename, quantity, price } = item || {};
+    let totalPrice = price * quantity;
+
+    const { carts } = useAuth();
+    const { cart, setCart } = carts;
+
+    const handleRemoveItem = () => {
+        const deleted = cart.filter(c => c.id !== item.id);
+        setCart(deleted);
+    }
+
+    const history = useHistory();
+    const handlePlaceOrder = () => {
+        setCart([]);
+        history.push('/shipping');
+    }
+
+    return (
+        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-6 align-items-center justify-content-center shadow my-3 py-3">
+            <img src={filename} width="100%" height="200px" alt="" />
+            <h3>{title}</h3>
+            <p>Food Id: {id}</p>
+            <p>Quantity: {quantity}</p>
+            <p>Total Price: ${totalPrice.toFixed(2)}</p>
+            <div>
+                <Button onClick={handleRemoveItem} variant="contained" className="bg-danger"><i className="fas fa-trash me-1"></i> Remove</Button>
+                <Button onClick={handlePlaceOrder} variant="contained" className="bg-success mt-3"><i class="fas fa-location-arrow me-1"></i> Place Order</Button>
+            </div>
+        </div>
+    );
+};
+
+export default ReviewItem;

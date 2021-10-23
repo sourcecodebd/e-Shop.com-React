@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  font-family: Poppins;
+  color: #505050; 
+  background-color:  rgb(255, 246, 246);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.containers{
+  margin: 0 auto;
+  max-width: 1200px
+}

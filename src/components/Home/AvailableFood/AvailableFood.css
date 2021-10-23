@@ -1,0 +1,86 @@
+.available{
+    width: 350px;
+    height: 360px;
+}
+.available::-webkit-scrollbar{
+    display: none;
+}
+.card-purchase{
+    background-color: #ffb610;
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    cursor: pointer;
+}
+.card-purchase-body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    padding: 10px
+}
+.card-purchase-body:hover{
+    background-color: black;
+    color: white;
+}
+.card-fig{
+    color: white;
+    font-size: 18px;
+    padding: 10px 5px;
+    position: relative;
+}
+.type{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    font-size: 14px;
+    background-color: #ffb610;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.title{
+    margin-left: 10px;
+    font-size: 25px
+}
+.btn-more{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 20px
+}
+.yellow{
+    color: yellow;
+}
+.image-result{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.image-result img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+.view-image:hover .fa-eye{
+    display: none;
+}
+.view-image:hover .image-result{
+    padding: 10px 0;
+    display: block;
+    z-index: 110;
+    position: relative;
+    bottom: -100px;
+    left: 10%;
+    right: 0;
+    margin: auto;
+}
+@media only screen and (max-width: 768px){
+    .available{
+        width: 95%;
+    }
+}

@@ -1,0 +1,22 @@
+.food-container{
+    padding-bottom: 80px;
+}
+.foods{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin: auto;
+}
+.nav-link{
+    color: white !important;
+    background-color: black !important;
+    margin-right: 5px
+}
+.nav-link:hover{
+    color: black !important;
+    background-color: white !important;
+}
+.tabs{
+    color: orange !important;
+}
